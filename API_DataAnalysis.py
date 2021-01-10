@@ -50,8 +50,8 @@ def fonction_princ():
 @app.route("/", methods = ['POST'])
 def prediction_api():
     classifier = fonction_princ()
-    pute = classifier.predict([request.json.get("value")])
-    return {"value": int(pute[0])}
+    res = classifier.predict([request.json.get("value")])
+    return {"value": int(res[0])}
 
 
 if __name__ == '__main__':
